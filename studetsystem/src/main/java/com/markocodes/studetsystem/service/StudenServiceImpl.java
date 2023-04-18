@@ -5,6 +5,8 @@ import com.markocodes.studetsystem.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class StudenServiceImpl implements  StudentService{
     @Autowired
@@ -12,5 +14,10 @@ public class StudenServiceImpl implements  StudentService{
     @Override
     public Student saveStudendt(Student student) {
         return studentRepository.save(student);
+    }
+
+    @Override
+    public List<Student> getAllStudents() {
+        return studentRepository.findAll();
     }
 }
